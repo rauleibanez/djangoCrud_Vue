@@ -12,6 +12,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     # --------------------------------------------
     # Para filtrar productos desde las categorias 
+    # --> /api/products/by_category/?category=3
     # --------------------------------------------
     @action(detail=False)
     def by_category(self, request):
