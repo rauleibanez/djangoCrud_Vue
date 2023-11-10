@@ -4,13 +4,8 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: 'FooterComponent',
-  /*components: {
-    HelloWorld
-  }*/
-}	
+<script setup>
+	
 </script>
 
 <style>

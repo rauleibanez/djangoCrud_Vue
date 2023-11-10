@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # organización y control sobre las aplicaciones de terceros que 
 # accesan a las APIs de Django (Backend)
 # ================================================================
-
+# APPS que se Ibstalan con Django
 BASE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,12 +43,13 @@ BASE_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',    
 ]
-
+#APPS instaladas con PIP manualmente
 THIRD_APPS = [
     'rest_framework',
     'corsheaders',
+    'django_filters',
 ]
-
+# APPS creadas por nosotros en la aplicación
 OWN_APPS = [
     'products',
 ]
@@ -66,11 +67,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+#Para poder permitir que otras aplicaciones puedan acceder a las APIs
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
     'http://127.0.0.1:8080',
 ]
-
+#Metodos Permitidos para manipular APIs
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
@@ -79,6 +81,11 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
+
+#Para poder hacer filtrado de datos en las APIs 
+REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 ROOT_URLCONF = 'core.urls'
 
@@ -152,6 +159,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+# Configuracion de la carpeta de almacenamiento de las imagenes
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media") 

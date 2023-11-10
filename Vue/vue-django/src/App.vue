@@ -1,18 +1,17 @@
 <template>
-  <div class="container">
-  <!----------  
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav> 
-  --> 
-  <navbar-component-vue></navbar-component-vue>
-  </div>
+    <!----------  
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav> 
+    --> 
+  <navbar-component-vue v-if="$route.path !='/'" />
 
-  <selectbar-component-vue></selectbar-component-vue>
+
+  <selectbar-component-vue v-if="$route.path ==='/about'"/>
   <router-view/>
 
-  <footer-component-vue></footer-component-vue>
+  <footer-component-vue/>
 
 </template>
 
@@ -38,17 +37,8 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script>
+<script setup>
   import FooterComponentVue from "./components/FooterComponent.vue"
   import NavbarComponentVue from "./components/NavbarComponent.vue"
   import SelectbarComponentVue from "./components/SelectbarComponent.vue"
-
-  export default {
-  name: 'App',
-  components: {
-    FooterComponentVue,
-    NavbarComponentVue,
-    SelectbarComponentVue    
-  }
-} 
 </script>

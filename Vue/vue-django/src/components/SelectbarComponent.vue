@@ -39,7 +39,7 @@
   <!-- FIN DEL CARROUSEL -->
   <!-- BARRA DE SELECCION DE CATEGORIAS -->
   <div class="mt-3" v-if="$route.path !== '/about'">
-    <button class="btn btn-dark" v-for="category in categories" :key="category.id">{{ category.name }}</button>
+    <button class="btn btn-dark" v-for="category in categories" :key="category.id" @click="getCategory(category.id, category.name)">{{ category.name }}</button>
     <!--button class="btn btn-dark">Categoria 2</button>
     <button class="btn btn-dark">Categoria 3</button>
     <button class="btn btn-dark">Categoria 4</button-->
@@ -49,29 +49,28 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import axios from 'axios'
+import {ref, defineEmits, onMounted} from 'vue'
 
-export default {
-  name: 'SelectbarComponent',
-  /*components: {
-    HelloWorld
-  }*/
-  data(){
-    return {
-      categories:[]
-    }
-  },
-  mounted(){
-    axios.get('http://127.0.0.1:8000/api/categories/')
-    .then(response =>{
-      this.categories= response.data
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  }
-}	
+const categories = ref([])
+const categoryId = ref(null)
+const categoryName = ref(null)
+const emit = defineEmits(['getCategoryId'])
+
+const getCategory = (id, name) => {
+  emit('getCategoryId', id, name)
+}
+
+onMounted(() => {
+  axios.get('http://127.0.0.1:8000/api/categories/')
+  .then(response =>{
+    categories.value= response.data
+  })
+  .catch(error => {
+    console.log(error)
+  })
+})	
 </script>
 
 <style>
