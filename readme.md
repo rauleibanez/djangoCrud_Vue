@@ -1,7 +1,6 @@
 ## Django App + VueJs
 
-Aplicación CRUD para guardar información de Tareas
-**Nota:** *Aun sin terminar (No totaliza)* 
+Aplicación Vue que consume APIs Creadeas en Django Rest Framwork
 
 | BackEnd | FrontEnd | Repositorio de Datos |
 |-|-|
@@ -13,19 +12,19 @@ Paqueteria Utilizada en Django
 
 | Paquete | Versión |
 |-|-| 
-| Django | 4.2.5 |
+| Django | 4.2.7 |
 | Pillow | 10.1.0 |
+| coreapi | 2.3.3 |
+| django-cors-headers | 4.3.0 |
+| django-filter | 23.3 |
+| djangorestframework | 3.14.0 |
 
-Paqueteria Utilizada en React 
+Paqueteria Utilizada en Vue
 
 | Paquete | Versión |
 |-|-| 
 | axios | ^1.6.0 |
-| react | ^18.2.0 |
-| react-dom | ^18.2.0 |
-| react-hook-form | ^7.47.0 |
-| react-hot-toast | ^2.4.1 |
-| react-router-dom | ^6.18.0 | 
+| Vue | ^18.2.0 |
 
 ---
 
