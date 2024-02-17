@@ -3,7 +3,7 @@
 Aplicación Vue que consume APIs Creadeas en Django Rest Framwork
 
 | BackEnd | FrontEnd | Repositorio de Datos |
-|-|-|
+|-|-|-|
 | Django  | VueJs | SQLite3 |
 
 ---
