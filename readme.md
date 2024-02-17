@@ -28,5 +28,11 @@ Paqueteria Utilizada en Vue
 
 ---
 
+![Alt](imagen1.png)
+![Alt](imagen2.png)
+
+---
+
+
 |Raúl Ibáñez M.|
 |-------------------------|
